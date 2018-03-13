@@ -1,0 +1,35 @@
+doctype html
+html(lang='en')
+	include partials/head.jade
+
+	body
+		#shopping_cart_overlay(aria-hidden='true')
+			#shopping_cart_spacer
+				#shopping_cart_card
+					#shopping_cart_close
+						i.material-icons 
+					#shopping_cart_container
+						#shopping_cart_content
+							h1 Shopping Cart
+
+		include partials/nav.jade
+
+		#main-content
+			.main-images
+				#main-image-sinatra(onclick="location.href='/person/sinatra';")
+					div
+						span SINATRA
+				#main-image-obama(onclick="location.href='person.html';")
+					div
+						span OBAMA
+				#main-image-warhol(onclick="location.href='person.html';")
+					div
+						span WARHOL
+				#main-image-eberhard(onclick="location.href='person.html';")
+					div
+						span EBERHARD
+
+		include partials/footer.jade
+
+		script(src='https://use.fontawesome.com/41747c3e1c.js')
+		script(src='/js/main.js')

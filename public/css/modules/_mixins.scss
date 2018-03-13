@@ -1,0 +1,52 @@
+@mixin dimensions($width, $height: auto) {
+	width: $width;
+	height: $height;
+}
+
+@mixin flex($display, $justify: initial, $align: initial, $direction: initial) {
+	display: $display;
+	justify-content: $justify;
+	align-items: $align;
+	flex-direction: $direction;
+}
+
+@mixin dark-background-image($url, $darken, $position: 0% 0%, $size: auto, $repeat: repeat) {
+	background: linear-gradient( rgba(0, 0, 0, $darken), rgba(0, 0, 0, $darken) ), url($url);
+	background-position: $position;
+	background-size: $size;
+	background-repeat: $repeat;
+}
+
+@mixin text($size, $color: auto, $weight: auto) {
+	font-size: $size;
+	color: $color;
+	font-weight: $weight;
+}
+
+@mixin media-query($breakpoint, $property, $style) {
+	@media screen and (max-width: $breakpoint) {
+		& {
+			#{$property}: $style;
+		}
+	}
+}
+
+@mixin main-image($url, $color) {
+	@include dimensions(100%, 550px);
+	@include flex(flex, center, center);
+	@include dark-background-image($url, 0.0, center center, cover);
+	@include media-query($s-breakpoint, height, 400px);
+	@include media-query($xs-breakpoint, height, 300px);
+	cursor: pointer;
+
+	div {
+		background-color: invert($color);
+		padding: 10px 20px;
+
+		span {
+			@include text(5em, $color, 700);
+			@include media-query($m-breakpoint, font-size, 4em);
+			@include media-query($s-breakpoint, font-size, 2.8em);
+		}
+	}
+}

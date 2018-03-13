@@ -1,0 +1,63 @@
+nav#navigation
+	#burger
+		#burger_toggle
+			.burger_line
+			.burger_line
+			.burger_line
+	a#title_ref(href='/')
+		#title
+			img(src='https://i.imgur.com/3JbOl9g.jpg', alt='logo')
+	#links
+		a(href='/person/sinatra')
+			if person == 'sinatra'
+				.nav_link.active
+					span SINATRA
+			else
+				.nav_link
+					span SINATRA
+		a(href='/person/obama')
+			if person == 'obama'
+				.nav_link.active
+					span OBAMA
+			else
+				.nav_link
+					span OBAMA
+		a(href='/person/warhol')
+			if person == 'warhol'
+				.nav_link.active
+					span WARHOL
+			else
+				.nav_link
+					span WARHOL
+		a(href='/person/eberhard')
+			if person == 'eberhard'
+				.nav_link.active
+					span EBERHARD
+			else
+				.nav_link
+					span EBERHARD
+		a(href='/person/custom')
+			if person == 'custom'
+				.nav_link.active
+					span CUSTOM
+			else
+				.nav_link
+					span CUSTOM
+	#shopping_cart
+		i.fa.fa-shopping-basket(aria-hidden='true')
+	#dropdown
+		a(href='person.html')
+			#dropdown_nav_link
+				span SINATRA
+		a(href='person.html')
+			#dropdown_nav_link
+				span OBAMA
+		a(href='person.html')
+			#dropdown_nav_link
+				span WARHOL
+		a(href='person.html')
+			#dropdown_nav_link
+				span EBERHARD
+		a(href='person.html')
+			#dropdown_nav_link
+				span CUSTOM

@@ -1,0 +1,40 @@
+doctype html
+html(lang='en')
+	include partials/head.jade
+
+	body
+		#shopping_cart_overlay(aria-hidden='true')
+			#shopping_cart_spacer
+				#shopping_cart_card
+					#shopping_cart_close
+						i.material-icons 
+					#shopping_cart_container
+						#shopping_cart_content
+							h1 Shopping Cart
+
+		include partials/nav.jade
+
+		#person_header_container
+			#person_header
+				h1 #{person}
+				p
+					| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi maiores explicabo necessitatibus quidem error rem, vitae cupiditate illum laudantium id suscipit recusandae eligendi fugiat quam dolorum maxime. Voluptatibus ipsam earum, quibusdam asperiores debitis nihil fuga, provident nam ab tempore eum.
+		#person_container
+			#person_grid
+				.grid_block
+					img(src='https://i.imgur.com/Dd60nYR.jpg', alt='')
+				.grid_block
+					img(src='https://i.imgur.com/HWf7IUl.jpg', alt='')
+				.grid_block
+					img(src='https://i.imgur.com/0Pu6Xsx.jpg', alt='')
+				.grid_block
+					img(src='http://via.placeholder.com/1280x800', alt='')
+				.grid_block
+					img(src='http://via.placeholder.com/550x800', alt='')
+				.grid_block
+					img(src='http://via.placeholder.com/350x550', alt='')
+		
+		include partials/footer.jade
+
+		script(src='https://use.fontawesome.com/41747c3e1c.js')
+		script(src='/js/main.js')

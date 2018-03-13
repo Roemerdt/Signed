@@ -1,0 +1,65 @@
+doctype html
+html(lang='en')
+	include partials/head.jade
+
+	body
+		#shopping_cart_overlay(aria-hidden='true')
+			#shopping_cart_spacer
+				#shopping_cart_card
+					#shopping_cart_close
+						i.material-icons 
+					#shopping_cart_container
+						#shopping_cart_content
+							h1 Shopping Cart
+		
+		include partials/nav.jade
+
+		#product_container
+			#product_grid
+				#product_image_container
+					#product_image_frame
+						.img_fill
+				#product_info_container
+					#product_info_spacer
+						#product_name_price
+							h1 Sinatra T-Shirt
+							span €59,99
+						#product_size
+							span#set_size_span Size: 
+							span#var_size_span M
+							#product_size_radio
+								#product_size_select_s.product_size_select
+									span S
+								#product_size_select_m.product_size_select
+									span M
+								#product_size_select_l.product_size_select
+									span L
+								#product_size_select_xl.product_size_select
+									span XL
+						#product_color
+							.product_color_select(style='background-color: #333')
+							.product_color_select(style='background-color: teal')
+							.product_color_select(style='background-color: salmon')
+						#product_shopping_cart
+							#shopping_cart_cta
+								span
+									i.fa.fa-shopping-basket(aria-hidden='true')
+									| IN SHOPPING BAG
+						#product_features
+							span
+								i.fa.fa-check(aria-hidden='true')
+								| Regular fit
+							span
+								i.fa.fa-check(aria-hidden='true')
+								| 100% cotton
+							span
+								i.fa.fa-check(aria-hidden='true')
+								| Embroidered signature
+							span
+								i.fa.fa-check(aria-hidden='true')
+								| 2 day shipping
+
+		include partials/footer.jade
+
+		script(src='https://use.fontawesome.com/41747c3e1c.js')
+		script(src='/js/main.js')

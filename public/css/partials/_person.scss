@@ -1,0 +1,43 @@
+#person_header_container {
+	@include dimensions(100%);
+	@include flex(flex, center);
+	@include media-query($m-breakpoint, padding-top, 60px);
+	padding-top: 100px;
+
+	#person_header {
+		@include dimensions(800px);
+		padding: 60px 20px 0px 20px;
+
+		h1 {
+			font-size: 2.4em;
+			text-transform: uppercase;
+		}
+	}
+}
+
+#person_container {
+	@include dimensions(100%);
+	@include flex(flex, center);
+	@include media-query($m-breakpoint, padding, 60px 20px);
+	padding: 60px 0px;
+	box-sizing: border-box;
+
+	#person_grid {
+		@include dimensions(800px);
+		@include media-query($s-breakpoint, column-count, 1);
+		column-count: 2;
+		column-gap: 16px;
+
+		.grid_block {
+			break-inside: avoid-column;
+			background-color: #2C2F33;
+			margin-bottom: 16px;
+			color: #fff;
+
+			img  {
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+}

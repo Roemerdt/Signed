@@ -1,0 +1,147 @@
+#navigation {
+	@include dimensions(100%, 80px);
+	@include flex(flex, space-between);
+	@include media-query($m-breakpoint, height, 60px);
+	position: fixed;
+	z-index: 2;
+	flex-wrap: wrap;
+	transition: background-color 0.25s ease-out;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+
+	body.hasHover &:hover {
+		background-color: #fff;
+	}
+
+	a {
+		text-decoration: none;
+
+		#title {
+			@include dimensions(130px, 100%);
+			@include flex(flex, center, center);
+			@include media-query($m-breakpoint, margin-left, 0);
+			@include media-query($m-breakpoint, width, 100px);
+			margin-left: 10px;
+
+			img {
+				display: block;
+				@include dimensions(100%);
+				// @include media-query($m-breakpoint, padding-top, 8px);
+			}
+		}
+	}
+
+	#links {
+		@include dimensions(700px, 100%);
+		@include flex(flex, space-around, center);
+
+		@include media-query($m-breakpoint, display, none);
+
+
+		a {
+			text-decoration: none;
+
+			.nav_link {
+				@include dimensions(auto, 50%);
+				@include flex(flex, initial, center);
+				cursor: pointer;
+
+				span {
+					@include text(0.85em, #222);
+				}
+
+				body.hasHover &:hover {
+					box-sizing: border-box;
+					border-bottom: 3px solid #222;
+				}
+
+				body.hasHover &.active {
+					background-color: #222;
+					border: 0;
+					
+					span {
+						color: #fff;
+						padding: 0px 2px;
+					}
+				}
+			}
+		}
+	}
+
+	#burger {
+		@include dimensions(70px, 60px);
+		@include flex(none, center, center);
+
+		#burger_toggle {
+			@include dimensions(30px, 20px);
+			@include flex(flex, space-between, center, column);
+			cursor: pointer;
+
+			.burger_line {
+				@include dimensions(30px, 2px);
+				background-color: #000;
+			}
+		}
+
+		@media screen and (max-width: $m-breakpoint) {
+			& {
+				@include flex(flex, center, center);
+			}
+		}
+	}
+
+	#shopping_cart {
+		@include dimensions(80px, 80px);
+		@include flex(flex, center, center);
+
+		i {
+			@include text(1.5em, #000);
+			cursor: pointer;
+		}
+
+		@media screen and (max-width: $m-breakpoint) {
+			& {
+				@include dimensions(60px, 60px);
+			}
+		}
+	}
+
+	#dropdown {
+		width: 100%;
+		max-height: 0;
+		overflow: hidden;
+		padding: 0px 20px;
+		transition: max-height 0.15s ease-out;
+		background-color: #fff;
+
+		&.active {
+			max-height: 500px;
+			transition: max-height 0.25s ease-in;
+		}
+
+		a {
+			@include dimensions(100%, 30px);
+			@include flex(flex, initial, center);
+			border-bottom: 1px solid #222;
+			margin-bottom: 20px;
+
+			&:first-child {
+				margin-top: 15px;
+			}
+
+			&:last-child {
+				margin-bottom: 25px;
+			}
+
+			#dropdown_nav_link {
+				@include dimensions(100%, auto);
+
+				span {
+					@include text(0.8em, #222);
+				}
+			}
+		}
+
+		// @include media-query($m-breakpoint, display, none);
+	}
+}

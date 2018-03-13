@@ -1,0 +1,26 @@
+#main-content {
+	@include dimensions(100%, auto);
+	@include flex(flex, initial, center, column);
+	@include media-query($m-breakpoint, padding-top, 60px);
+	padding-top: 80px;
+
+	.main-images {
+		@include dimensions(100%, auto);
+		
+		#main-image-sinatra{
+			@include main-image("https://i.imgur.com/kDYvZme.jpg", #fff);
+		}
+
+		#main-image-obama{
+			@include main-image("https://i.imgur.com/LsiScCt.jpg", #000);
+		}
+
+		#main-image-warhol{
+			@include main-image("https://i.imgur.com/s9BV040.jpg", #fff);
+		}
+
+		#main-image-eberhard{
+			@include main-image("https://i.imgur.com/u97HCeE.jpg", #000);
+		}
+	}
+}
